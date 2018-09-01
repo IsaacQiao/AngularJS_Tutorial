@@ -4,7 +4,7 @@
 import { Component } from '@angular/core';
 
 
-//component decorator
+//component decorators
 @Component({
   // selector: means this component will be refered by <app-root>
   // so this component will be put at the app-root part in index.html with all the html, scss, logics of this component
