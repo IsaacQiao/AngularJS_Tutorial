@@ -1,7 +1,7 @@
 // service file is for putting a part of reusable code that will be used by a lot of components.
 // like a API that will get data from DB 
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
 @Injectable({// injectable decorators
   providedIn: 'root'
 })
