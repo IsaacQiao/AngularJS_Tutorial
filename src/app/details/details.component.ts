@@ -1,15 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-
-@Component({
+import { DataService } from '../data.service';
+import { Observable } from 'rxjs'; // RxJS is a library for reactive programming using Observables, 
+import { ActivatedRoute } from '@angular/router'; 
+ @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit {
 
-  constructor() { }
+  user$ : object;
+
+  constructor(private data: DataService, private route: ActivatedRoute ) {
+    this.route.params.subscribe( params => this.user$ = params.id)
+  }
 
   ngOnInit() {
+    this.data.getUser(this.user$).subscribe(
+      data => this.user$ = data
+    )
   }
 
 }

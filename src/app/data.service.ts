@@ -14,4 +14,10 @@ export class DataService {// logic of the service
   getUsers(){
     return this.http.get('https://jsonplaceholder.typicode.com/users') // a testing page from jsonplaceholder
   }
+  getUser(userId){
+    return this.http.get('https://jsonplaceholder.typicode.com/users/'+userId) // a testing page from jsonplaceholder
+  }
+  getPosts(){
+    return this.http.get('https://jsonplaceholder.typicode.com/posts') // a testing page from jsonplaceholder
+  }
 }
